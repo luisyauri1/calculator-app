@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <main class="box-main">
+        <div class="box-logos">
+            <img class="logo-unsaac" src="assets/imgs/ieee_unmsm_wie_rgb_horizontal_white.png" alt="">
+        </div>
+
+        <div class="container">
+            <div class="container-header">
+                <img src="./assets/imgs/history.svg" alt="history">
+                <img src="./assets/imgs/more.svg" alt="history">
+            </div>
+            <div class="container-result">
+                <div id="text-result"></div>
+            </div>
+            <div class="container-actions">
+                <div class="row">
+                    <button onclick="presionarBotonLimpiar()" class="button">C</button>
+                    <button class="button button-disabled">%</button>
+                    <button class="button button-disabled">+/-</button>
+                    <button class="button button-disabled"><img src="./assets/imgs/backspace.svg"
+                            alt="backspace"></button>
+                </div>
+                <div class="row">
+                    <button onclick="presionarBotonNumerico(7)" class="button">7</button>
+                    <button onclick="presionarBotonNumerico(8)" class="button">8</button>
+                    <button onclick="presionarBotonNumerico(9)" class="button">9</button>
+                    <button id="btn-add" onclick="presionarBotonOperacion('+')" class="button button-action">+</button>
+                </div>
+                <div class="row">
+                    <button onclick="presionarBotonNumerico(4)" class="button">4</button>
+                    <button onclick="presionarBotonNumerico(5)" class="button">5</button>
+                    <button onclick="presionarBotonNumerico(6)" class="button">6</button>
+                    <button id="btn-subtract" onclick="presionarBotonOperacion('-')"
+                        class="button button-action">-</button>
+                </div>
+                <div class="row">
+                    <button onclick="presionarBotonNumerico(1)" class="button">1</button>
+                    <button onclick="presionarBotonNumerico(2)" class="button">2</button>
+                    <button onclick="presionarBotonNumerico(3)" class="button">3</button>
+                    <button id="btn-multiply" onclick="presionarBotonOperacion('*')"
+                        class="button button-action">*</button>
+                </div>
+                <div class="row">
+                    <button onclick="presionarBotonNumerico(0)"" class=" button">0</button>
+                    <button class="button button-disabled">.</button>
+                    <button id="btn-result" onclick="persionarBotonResultado()" class="button button-action">=</button>
+                    <button id="btn-divide" onclick="presionarBotonOperacion('/')"
+                        class="button button-action">/</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-logos">
+            <img class="logo-unsaac" src="assets/imgs/ieee_unsaac_wie_rgb_horizontal_w.png" alt="">
+        </div>
+    </main>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
