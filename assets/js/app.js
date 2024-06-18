@@ -4,6 +4,9 @@ const botonMultiplicar = document.getElementById("btn-multiply");
 const botonDividir = document.getElementById("btn-divide");
 const botonResultado = document.getElementById("btn-result");
 
+botonResultado.classList.add("button-disabled");
+botonResultado.disabled = true;
+
 const textoResultado = document.getElementById("text-result");
 let texto = "";
 
@@ -28,8 +31,8 @@ function presionarBotonLimpiar() {
   botonMultiplicar.disabled = false;
   botonDividir.classList.remove("button-disabled");
   botonDividir.disabled = false;
-  botonResultado.classList.remove("button-disabled");
-  botonResultado.disabled = false;
+  botonResultado.classList.add("button-disabled");
+  botonResultado.disabled = true;
 }
 
 function presionarBotonOperacion(valor) {
@@ -44,31 +47,41 @@ function presionarBotonOperacion(valor) {
   botonMultiplicar.disabled = true;
   botonDividir.classList.add("button-disabled");
   botonDividir.disabled = true;
+
+  botonResultado.classList.remove("button-disabled");
+  botonResultado.disabled = false;
 }
 
 function persionarBotonResultado() {
-  botonResultado.classList.add("button-disabled");
-  botonResultado.disabled = true;
-
   const listaDatos = texto.split(" ");
-  const num1 = parseFloat(listaDatos[0]);
-  const operador = listaDatos[1];
   const num2 = parseFloat(listaDatos[2]);
-
-  switch (operador) {
-    case "+":
-      resultado = num1 + num2;
-      break;
-    case "-":
-      resultado = num1 - num2;
-      break;
-    case "*":
-      resultado = num1 * num2;
-      break;
-    case "/":
-      resultado = num1 / num2;
-      break;
+  if (num2) {
+    botonResultado.classList.add("button-disabled");
+    botonResultado.disabled = true;
+    calcularOperacionesMatematicas();
   }
-  texto = texto + " = " + resultado;
-  textoResultado.innerHTML = texto;
+}
+
+function calcularOperacionesMatematicas() {
+  // const listaDatos = texto.split(" ");
+  // const num1 = Number(listaDatos[0]);
+  // const operador = listaDatos[1];
+  // const num2 = Number(listaDatos[2]);
+  // let resultado = "";
+  // switch (operador) {
+  //   case "+":
+  //     resultado = num1 + num2;
+  //     break;
+  //   case "-":
+  //     resultado = num1 - num2;
+  //     break;
+  //   case "*":
+  //     resultado = num1 * num2;
+  //     break;
+  //   case "/":
+  //     resultado = num1 / num2;
+  //     break;
+  // }
+  // texto = texto + " = " + resultado;
+  // textoResultado.innerHTML = texto;
 }
